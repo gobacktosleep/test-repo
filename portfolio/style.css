@@ -241,3 +241,44 @@ h3 {
     font-weight: 400;
     text-align: center;
 }
+
+.section-portfolio {
+    background: #000;
+}
+
+.title-rectangle {
+    width: 220px;
+}
+
+.portfolio-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 59px;
+    margin-bottom: 59px;
+    gap: 5px;
+}
+
+.black-button {
+    width: 220px;
+    height: 55px;
+    font-family: inherit;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 400;
+    color: #bdae82;
+    background-color: #000;
+    border: 3px solid #bdae82;
+    transition: 0.3s;
+}
+
+.black-button:hover {
+    color: #fff;
+}
+
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    gap: 25px;
+}
