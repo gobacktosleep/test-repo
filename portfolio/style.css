@@ -106,3 +106,54 @@ body {
 .active {
     color: #bdae82;
 }
+
+.hero-container {
+    display: flex;
+    height: 820px;
+    background-image: url("./assets/img/bg.jpg");
+    background-position: center -90px;
+    background-repeat: no-repeat;
+}
+
+.section-hero {
+    margin-left: 80px;
+    padding-top: 110px;
+}
+
+.hero-title {
+    font-family: "Merriweather", serif;
+    font-size: 60px;
+    line-height: 120px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.text {
+    max-width: 470px;
+    margin-top: -40px;
+    margin-bottom: 25px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.button {
+    width: 220px;
+    height: 55px;
+    font-family: inherit;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    background-color: #bdae82;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    color: #fff;
+}
