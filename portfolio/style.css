@@ -372,3 +372,87 @@ h3 {
     line-height: 36px;
     font-weight: 400;
 }
+
+.section-contacts {
+    display: flex;
+    justify-content: flex-end;
+    background-image: url("./assets/img/contacts-photo.jpg");
+    background-size: auto 700px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin-top: 42px;
+    margin-right: 20px;
+}
+
+.contacts-title {
+    font-family: "Merriweather", serif;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: left;
+    color: #bdae82;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 22px;
+    gap: 20px;
+}
+
+::placeholder {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #bdae82;
+}
+
+input {
+    outline: none;
+}
+
+input::placeholder {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+.email, 
+.phone {
+    height: 50px;
+    padding-left: 18px;
+    font-family: inherit;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    color: #bdae82;
+    border: 3px solid #bdae82;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.message {
+    height: 100px;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    color: #bdae82;
+    border: 3px solid #bdae82;
+    background: rgba(0, 0, 0, 0.5);
+    resize: none;
+    outline: none;
+}
+
+:focus::placeholder {
+    color: transparent;
+}
+
