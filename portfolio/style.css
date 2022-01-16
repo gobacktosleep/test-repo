@@ -258,7 +258,7 @@ h3 {
     gap: 5px;
 }
 
-.black-button {
+.portfolio-button {
     width: 220px;
     height: 55px;
     font-family: inherit;
@@ -268,10 +268,11 @@ h3 {
     color: #bdae82;
     background-color: #000;
     border: 3px solid #bdae82;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.black-button:hover {
+.portfolio-button:hover {
     color: #fff;
 }
 
