@@ -1,0 +1,230 @@
+:root {
+    --filter-grey: invert(74%) sepia(17%) saturate(0%) hue-rotate(228deg) brightness(99%) contrast(76%);
+    --filter-white: invert(100%) sepia(0%) saturate(7494%) hue-rotate(80deg) brightness(100%) contrast(103%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: #222;
+}
+
+.fullscreen-cover {
+    position: absolute;
+    filter: blur(50px);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wrapper {
+    position: absolute;
+    max-width: 400px;
+    margin: 0 20px;
+    padding: 30px 30px 20px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.img-area {
+    width: 100%;
+    max-height: 340px;
+    overflow: hidden;
+}
+
+.img-area img {
+    width: 100%;
+    height: 100%;
+}
+
+.song-details {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.artist {
+    font-size: 18px;
+    font-weight: 300;
+    color: #3a3a3a;
+}
+
+.songname {
+    font-weight: 700;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #a3a3a3;
+}
+
+.progress-area {
+    width: 100%;
+    height: 5px;
+    background: #000;
+    cursor: pointer;
+}
+
+.progress-bar {
+    position: relative;
+    width: 0.1%;
+    height: inherit;
+    background-color: #b3b3b3;
+}
+
+.progress-bar::before {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    right: -5px;
+    background: inherit;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.progress-area:hover .progress-bar::before {
+    opacity: 1;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.controls img {
+    cursor: pointer;
+}
+
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.prev,
+.next,
+.volume {
+    width: 30px;
+    height: 30px;
+    filter: var(--filter-grey);
+}
+
+.prev:hover,
+.next:hover,
+.volume:hover {
+    filter: var(--filter-white);
+}
+
+.play-pause {
+    width: 50px;
+    height: 50px;
+    filter: var(--filter-white);
+}
+
+.play-pause:hover {
+    transform: scale(1.05);
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    right: -5px;
+    bottom: 105px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+    transform: rotate(-90deg);
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.volume-slider.active {
+    display: block;
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 30px;
+    background: #fff;
+    box-shadow: -50px 0 1px 50px #fff;
+}
+
+.github {
+    width: 50px;
+    height: 50px;
+    background-image: url('./assets/svg/github.svg');
+    background-repeat: no-repeat;
+    filter: var(--filter-grey);
+}
+
+.github:hover {
+    transform: scale(1.05);
+    filter: var(--filter-white);
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.footer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    z-index: 3;
+}
+
+.rss {
+    width: 90px;
+    height: 40px;
+    margin-left: 10px;
+    background-image: url('./assets/svg/rs_school_js.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: var(--filter-grey);
+}
+
+.rss:hover {
+    transform: scale(1.05);
+}
+
+.copyright {
+    font-size: 16px;
+}
+
