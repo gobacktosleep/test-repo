@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.ico">
+    <title>Custom Audio Player</title>
+</head>
+<body>
+    <img src="" class="fullscreen-cover" alt="fullscreen-cover">
+    <div class="wrapper">
+        <div class="img-area">
+            <img src="" alt="album-cover">
+        </div>
+        <div class="song-details">
+            <p class="songname"></p>
+            <h2 class="artist"></h2>
+        </div>
+        <div class="timer">
+            <span class="current">0:00</span>
+            <span class="duration"></span>
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar"></div>
+            <audio src="" class="main-audio"></audio>
+        </div>
+        <div class="controls">
+            <a href="https://github.com/gobacktosleep" target="_blank" class="github"></a>
+            <div class="center-buttons">
+                <img src="./assets/svg/rewind.svg" class="prev" alt="icon">
+                <img src="./assets/svg/play.svg" class="play-pause" alt="icon">
+                <img src="./assets/svg/forward.svg" class="next" alt="icon">
+            </div>
+            <input type="range" class="volume-slider" max="1" value="1" step="0.1">
+            <img src="./assets/svg/volume.svg" class="volume" alt="icon">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="copyright"> © 2022</p>
+            <a href="https://rs.school/js/" target="_blank" class="rss"></a>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
