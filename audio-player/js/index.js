@@ -7,7 +7,8 @@ mainAudio = wrapper.querySelector('.main-audio'),
 playPauseButton = wrapper.querySelector('.play-pause'),
 prevButton = wrapper.querySelector('.prev'),
 nextButton = wrapper.querySelector('.next'),
-progressBar = wrapper.querySelector('.progress-bar');
+progressBar = wrapper.querySelector('.progress-bar'),
+progressArea = wrapper.querySelector('.progress-area');
 
 
 
@@ -48,7 +49,7 @@ playPauseButton.addEventListener('click', () => {
     isPaused ? pauseAudio() : playAudio();
 });
 
-// Пролистывание кликами по кнопкам
+// Пролистывание кликами по кнопкам prev/next
 
 function prevAudio() {
     audioIndex--;
@@ -72,7 +73,7 @@ nextButton.addEventListener('click', () => {
     nextAudio();
 });
 
-//
+// Таймер прогрессбара
 
 mainAudio.addEventListener('timeupdate', (e) => {
     const currentTime = e.target.currentTime;
@@ -99,4 +100,15 @@ mainAudio.addEventListener('timeupdate', (e) => {
         currentSec = `0${currentSec}`;
     };
     audioCurrentTime.innerText = `${currentMin}:${currentSec}`;
+});
+
+// Активный прогрессбар с возможностью вручную перемещать ползунок
+
+progressArea.addEventListener('click', (e) => {
+    let progressWidthvalue = progressArea.clientWidth;
+    let clickOffsetX = e.offsetX;
+    let songDuration = mainAudio.duration;
+
+    mainAudio.currentTime = (clickOffsetX / progressWidthvalue) * songDuration;
+    playAudio();
 });
