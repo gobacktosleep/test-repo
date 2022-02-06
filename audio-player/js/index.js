@@ -6,7 +6,8 @@ audioArtist = wrapper.querySelector('.song-details .artist'),
 mainAudio = wrapper.querySelector('.main-audio'),
 playPauseButton = wrapper.querySelector('.play-pause'),
 prevButton = wrapper.querySelector('.prev'),
-nextButton = wrapper.querySelector('.next');
+nextButton = wrapper.querySelector('.next'),
+progressBar = wrapper.querySelector('.progress-bar');
 
 
 
@@ -47,6 +48,8 @@ playPauseButton.addEventListener('click', () => {
     isPaused ? pauseAudio() : playAudio();
 });
 
+// Пролистывание кликами по кнопкам
+
 function prevAudio() {
     audioIndex--;
     audioIndex < 1 ? audioIndex = playlist.length : audioIndex = audioIndex;
@@ -67,4 +70,33 @@ function nextAudio() {
 
 nextButton.addEventListener('click', () => {
     nextAudio();
+});
+
+//
+
+mainAudio.addEventListener('timeupdate', (e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+    let progressWidth = (currentTime / duration) * 100;
+    progressBar.style.width = `${progressWidth}%`;
+
+    let audioCurrentTime = wrapper.querySelector('.current'),
+    audioDuration = wrapper.querySelector('.duration');
+
+    mainAudio.addEventListener('loadeddata', () => {
+        let musicDuration = mainAudio.duration;
+        let totalMin = Math.floor(musicDuration / 60);
+        let totalSec = Math.floor(musicDuration % 60);
+        if (totalSec < 10) {
+            totalSec = `0${totalSec}`;
+        };
+        audioDuration.innerText = `${totalMin}:${totalSec}`;
+    });
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if (currentSec < 10) {
+        currentSec = `0${currentSec}`;
+    };
+    audioCurrentTime.innerText = `${currentMin}:${currentSec}`;
 });
