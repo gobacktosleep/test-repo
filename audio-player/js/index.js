@@ -8,8 +8,9 @@ playPauseButton = wrapper.querySelector('.play-pause'),
 prevButton = wrapper.querySelector('.prev'),
 nextButton = wrapper.querySelector('.next'),
 progressBar = wrapper.querySelector('.progress-bar'),
-progressArea = wrapper.querySelector('.progress-area');
-
+progressArea = wrapper.querySelector('.progress-area'),
+volumeButton = wrapper.querySelector('.volume'),
+volumeSlider = wrapper.querySelector('.volume-slider');
 
 
 let audioIndex = 1;
@@ -111,4 +112,15 @@ progressArea.addEventListener('click', (e) => {
 
     mainAudio.currentTime = (clickOffsetX / progressWidthvalue) * songDuration;
     playAudio();
+});
+
+// Всплывающий по клику слайдер регулировки громкости
+
+volumeButton.addEventListener('click', () => {
+    volumeButton.classList.toggle('active');
+    volumeSlider.classList.toggle('active');
+});
+
+volumeSlider.addEventListener('input', () => {
+    mainAudio.volume = volumeSlider.value;
 });
