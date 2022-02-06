@@ -4,7 +4,9 @@ coverImg = wrapper.querySelector('.img-area img'),
 audioName = wrapper.querySelector('.song-details .songname'),
 audioArtist = wrapper.querySelector('.song-details .artist'),
 mainAudio = wrapper.querySelector('.main-audio'),
-playPauseButton = wrapper.querySelector('.play-pause');
+playPauseButton = wrapper.querySelector('.play-pause'),
+prevButton = wrapper.querySelector('.prev'),
+nextButton = wrapper.querySelector('.next');
 
 
 
@@ -43,4 +45,26 @@ function pauseAudio() {
 playPauseButton.addEventListener('click', () => {
     const isPaused = wrapper.classList.contains('pause');
     isPaused ? pauseAudio() : playAudio();
+});
+
+function prevAudio() {
+    audioIndex--;
+    audioIndex < 1 ? audioIndex = playlist.length : audioIndex = audioIndex;
+    loadAudio(audioIndex);
+    playAudio();
+};
+
+prevButton.addEventListener('click', () => {
+    prevAudio();
+});
+
+function nextAudio() {
+    audioIndex++;
+    audioIndex > playlist.length ? audioIndex = 1 : audioIndex = audioIndex;
+    loadAudio(audioIndex);
+    playAudio();
+};
+
+nextButton.addEventListener('click', () => {
+    nextAudio();
 });
