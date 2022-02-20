@@ -13,18 +13,25 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Jura', sans-serif;
+    font-size: 20px;
     color: #fff;
     background: #000;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 h1 {
-    padding-top: 20px;
-    padding-bottom: 80px;
+    margin: 0;
+    padding: 20px 10px 60px 30px;
     color: #479994;
 }
 
-.flips {
-    font-size: 20px;
+.main {
+    flex: 1 1 auto;
 }
 
 .flips span {
@@ -106,4 +113,35 @@ h1 {
 
 .back-view {
     transform: rotateY(180deg);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 10px;
+}
+
+.github {
+    width: 50px;
+    height: 50px;
+    background-image: url('./assets/svg/github.svg');
+    background-repeat: no-repeat;
+    filter: invert(100%) sepia(0%) saturate(7494%) hue-rotate(80deg) brightness(100%) contrast(103%);
+}
+
+.rss {
+    width: 90px;
+    height: 40px;
+    margin-left: 10px;
+    background-image: url('./assets/svg/rs_school_js.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.rss:hover,
+.github:hover {
+    transform: scale(1.05);
 }
